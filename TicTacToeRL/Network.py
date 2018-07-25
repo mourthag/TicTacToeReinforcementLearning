@@ -20,16 +20,16 @@ def updateTarget(opHolder, sess):
     for op in opHolder:
         sess.run(op)
 
-learning_rate = 0.00025
-batch_size = 64 #Number of Experiences per training step
+learning_rate = 0.0005
+batch_size = 32 #Number of Experiences per training step
 update_frequency = 4 #Perform training every n steps
 y = .99 #QValue Discount
 startE = 1 #Starting chance for random actions
 endE = 0.01 #Final chance for random actions
-annealing_steps = 70000  #goto endE within n steps
+annealing_steps = 50000  #goto endE within n steps
 num_episodes = 1000000 #number of games played
 num_random_steps = 50000 
-load_model = True
+load_model = False
 path = "./dqn" #saving path
 h_size = 256 #number of hidden neurons
 tau = 0.001 #factor for target net updates from primary net

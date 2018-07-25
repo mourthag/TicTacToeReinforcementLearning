@@ -23,8 +23,7 @@ class QNetwork():
         self.Value = tf.matmul(self.streamV, self.VW)
 
         #calculate final Q-Values
-        self.QOut = self.Value + tf.subtract(self.Advantage, tf.reduce_mean(self.Advantage, axis=1,keep_dims=True))
-        print(self.QOut.shape)
+        self.QOut = self.Value + tf.subtract(self.Advantage, tf.reduce_mean(self.Advantage, axis=1,keepdims=True))
         _,self.predictions = tf.nn.top_k(self.QOut[1,:], 9, True)
         self.predict = tf.argmax(self.QOut, 1)
 

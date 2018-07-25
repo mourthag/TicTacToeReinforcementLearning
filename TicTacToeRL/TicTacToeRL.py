@@ -6,11 +6,11 @@ import tensorflow as tf
 import numpy as np
 
 #RL rewards
-REWARD_WIN = 100.
+REWARD_WIN = 1.
 REWARD_DRAW = 0.
-REWARD_ACTION = 1.
-REWARD_LOOSE = -100.
-REWARD_INVALID = -1000.
+REWARD_ACTION = 0.
+REWARD_LOOSE = -1.
+REWARD_INVALID = -1.
 
 action_size=9
 
